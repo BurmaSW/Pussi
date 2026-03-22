@@ -1,0 +1,147 @@
+:root {
+  color-scheme: dark;
+  --bg: #11131a;
+  --surface: #1b1f2a;
+  --text: #f3f5ff;
+  --muted: #a6b0cc;
+  --accent: #73a1ff;
+  --danger: #ff7b8f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1d2b4f 0%, var(--bg) 45%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+.controls,
+.editor,
+.player-wrap {
+  background: color-mix(in oklab, var(--surface) 90%, black);
+  border: 1px solid #2a3150;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: end;
+}
+
+.control-group {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 220px;
+}
+
+.control-group span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+input[type="file"] {
+  border: 1px solid #3b4774;
+  background: #0f1220;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.55rem 0.65rem;
+}
+
+button {
+  border: 1px solid #4f6cc4;
+  background: linear-gradient(135deg, #4564b6, #36529f);
+  color: white;
+  border-radius: 8px;
+  padding: 0.6rem 0.85rem;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.1);
+}
+
+video {
+  width: 100%;
+  border-radius: 10px;
+  background: black;
+}
+
+.player-wrap {
+  position: relative;
+}
+
+.subtitle-overlay {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 2.2rem;
+  text-align: center;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+}
+
+.cue-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
+
+.cue-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.cue-item {
+  border: 1px solid #343d62;
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  background: #141827;
+}
+
+.cue-item small {
+  color: var(--muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.delete-btn {
+  background: #3a1220;
+  border-color: #8d2d49;
+  color: #ffc6d4;
+}
