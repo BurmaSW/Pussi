@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Subtitle App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>Video Subtitle App</h1>
+
+    <section class="controls">
+      <label class="control-group">
+        <span>Video File</span>
+        <input id="videoInput" type="file" accept="video/*" />
+      </label>
+
+      <label class="control-group">
+        <span>Subtitle File (.vtt)</span>
+        <input id="subtitleInput" type="file" accept=".vtt,text/vtt" />
+      </label>
+
+      <button id="downloadBtn" type="button">Download Subtitles</button>
+    </section>
+
+    <section class="player-wrap">
+      <video id="video" controls></video>
+      <div id="subtitleOverlay" class="subtitle-overlay"></div>
+    </section>
+
+    <section class="editor">
+      <h2>Add Subtitle Cue</h2>
+      <form id="cueForm" class="cue-form">
+        <input id="startTime" type="text" placeholder="Start (e.g. 00:00:01.000)" required />
+        <input id="endTime" type="text" placeholder="End (e.g. 00:00:04.000)" required />
+        <input id="cueText" type="text" placeholder="Subtitle text" required />
+        <button type="submit">Add Cue</button>
+      </form>
+
+      <h2>Subtitle Cues</h2>
+      <ul id="cueList" class="cue-list"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
